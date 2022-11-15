@@ -18,4 +18,4 @@ SOLVER:
   OPTIMIZING_METHOD: adamw
   CLIP_GRAD_L2NORM: 1.0
 TEST:
-  CHECKPOINT_FILE_PATH: pretrained_models/MViTv2_T_in1k.pyth
+  CHECKPOINT_FILE_PATH: pretrained_models/MViTv2_B_in1k.pyth
