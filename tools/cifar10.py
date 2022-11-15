@@ -184,8 +184,8 @@ def main():
         
         scheduler.step()
         if epoch % 1 == 0:
-            save_checkpoint(epoch, model, optimizer, scaler, scheduler, f"cifar10_models/MVITv2_T_Cifar10_{img_size}_{epoch}.pth")
-            print(f"Saved checkpoint to cifar10_models/MVITv2_T_Cifar10_{img_size}_{epoch}.pth in google drive")
+            save_checkpoint(epoch, model, optimizer, scaler, scheduler, f"cifar10_models/MVITv2_B_Cifar10_{img_size}_{epoch}.pth")
+            print(f"Saved checkpoint to cifar10_models/MVITv2_B_Cifar10_{img_size}_{epoch}.pth in google drive")
     print('Finished Training')
 
 if __name__ == "__main__":
