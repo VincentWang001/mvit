@@ -59,7 +59,6 @@ def train(epoch, model, trainloader, device, scaler, criterion, optimizer):
   running_loss = 0.0
   model.train()
   for i, data in enumerate(trainloader, 0):
-    print("hi")
     # get the inputs; data is a list of [inputs, labels]
     for k in range(len(data)):
         data[k] = data[k].to(device)
@@ -72,13 +71,15 @@ def train(epoch, model, trainloader, device, scaler, criterion, optimizer):
     scaler.step(optimizer)
     scaler.update()
     optimizer.zero_grad()
-
+    
     # print statistics
+    # print(f"{i}: {loss.item()}")
     running_loss += loss.item()
     #print("loss:", i, loss.item())
     if i % 100 == 99:    # print every 20 mini-batches
         print(f'[{epoch}, {i + 1:5d}] loss: {running_loss / 100:.3f}')
-        running_loss = 0.0    
+        running_loss = 0.0  
+    
 
 def test(model, testloader, device, criterion, epoch=-1):
     model.eval()
@@ -159,9 +160,9 @@ def main():
     classes = ('plane', 'car', 'bird', 'cat',
             'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
 
-    # gpu=0
-    # device=torch.device(f"cuda:{gpu}")
-    device=torch.device("cpu")
+    gpu=0
+    device=torch.device(f"cuda:{gpu}")
+    # device=torch.device("cpu")
 
 
     criterion = nn.CrossEntropyLoss()
