@@ -174,7 +174,7 @@ def main():
     start_epoch = 0
     if load_model:
         #U P D A T E  T H I S
-        start_epoch = load_checkpoint(model, optimizer, scaler, scheduler, "cifar10_models/MVITv2_T_Cifar10_224_0.pth") 
+        start_epoch = load_checkpoint(model, optimizer, scaler, scheduler, "cifar10_models/MVITv2_B_Cifar10_224_0.pth") 
         start_epoch += 1
 
     for epoch in range(start_epoch, n_epochs):  # loop over the dataset multiple times
