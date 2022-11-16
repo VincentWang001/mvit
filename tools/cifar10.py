@@ -176,7 +176,7 @@ def main():
         #U P D A T E  T H I S
         start_epoch = load_checkpoint(model, optimizer, scaler, scheduler, "cifar10_models/MVITv2_B_Cifar10_224_0.pth") 
         start_epoch += 1
-        print(f"model loaded successfully, now now starting epoch {start_epoch}")
+        print(f"model loaded successfully, now starting epoch {start_epoch}")
 
     for epoch in range(start_epoch, n_epochs):  # loop over the dataset multiple times
         train(epoch, model, trainloader, device, scaler, criterion, optimizer)
